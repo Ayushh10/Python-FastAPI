@@ -11,13 +11,19 @@ async def root():
 
 data : Any = [
     {
-        "campaign_id": 1,
+        "campaign_id": randint(10,100),
         "campaign_name": "Summer Launch",
         "date_created": datetime.now(),
         "last_updated": datetime.now()
         },
     {
-        "campaign_id": 2,
+        "campaign_id": randint(10,100),
+        "campaign_name": "Winter Launch",
+        "date_created": datetime.now(),
+        "last_updated": datetime.now()
+        },
+    {
+        "campaign_id": randint(10,100),
         "campaign_name": "Winter Launch",
         "date_created": datetime.now(),
         "last_updated": datetime.now()
