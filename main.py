@@ -48,3 +48,24 @@ async def create_camp(reqeust: Request):
     data.append(new)
     return {"data added": new}
 
+@app.put("/campaigns")
+async def update_camp(id: int, body: dict[str, Any]):
+    for index, campaign in enumerate(data):
+        if campaign.get("campaign_id") == id:
+            updated : Any = {
+                "campaign_id": id,
+                "campaign_name": body.get("name"),
+                "date_created": body.get("date"),
+                "last_updated": datetime.now()
+                }
+            data[index] = updated
+            return {"updated record": updated}
+    return "Record not Found"
+
+@app.delete("/campaigns")
+async def update_camp(id: int):
+    for index, campaign in enumerate(data):
+        if campaign.get("campaign_id") == id:
+            data.pop(index)
+            return "Record DELETED"
+    return "Record not Found"
