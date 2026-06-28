@@ -63,7 +63,7 @@ async def update_camp(id: int, body: dict[str, Any]):
     return "Record not Found"
 
 @app.delete("/campaigns")
-async def update_camp(id: int):
+async def delete_campaign(id: int):
     for index, campaign in enumerate(data):
         if campaign.get("campaign_id") == id:
             data.pop(index)
